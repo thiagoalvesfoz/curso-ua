@@ -1,0 +1,265 @@
+$primary: #6b0096;
+$darker-primary: darken($primary, 10);
+$lighter-primary: lighten($primary, 10);
+
+@mixin titulo ($color, $fs){
+    font-family: 'Helvetica';
+    font-size: $fs;
+    font-style: italic;
+    color: $color;
+}
+
+@mixin bg-titulo($light: false){
+    padding: 20px;
+    
+    @if($light){
+        background: $lighter-primary;
+    }@else{
+        background: $darker-primary;
+    }
+}
+
+
+.titulo-2{
+    @include bg-titulo;
+}
+
+.titulo-3{
+    @include bg-titulo($light: true);
+}
+
+
+body{
+    margin: 0;
+    perspective: 600px;
+}
+
+html{
+    overflow-x: hidden;
+    font-family: sans-serif;
+}
+
+.titulo{
+    @include titulo($primary, 40px);
+}
+
+.titulo-2{
+    @include titulo(white, 20px);
+    @include bg-titulo;
+}
+
+.titulo-3{
+    @include titulo(white, 20px);
+    @include bg-titulo($light: true);
+}
+
+.darker-primary{
+    background-color: $darker-primary;
+}
+
+.banner-text{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;
+    animation: fadein 2.5s;
+    transform-style: preserve-3d;
+    will-change: transform;
+    
+    // ANIMAÇÃO LOGO
+    
+    @keyframes fadein{
+        0%{transform: rotatex(90deg);opacity: 0}
+        70%{transform: rotatex(90deg); opacity: 0}
+        100%{transform: rotatex(0deg)}
+    }
+    
+    .bg{
+        padding: 5vh 5vw;
+        background: rgb(252, 252, 252);
+        
+        img{
+            width: 30vw;
+            min-width: 200px;
+        }
+    }
+    
+    
+}
+
+.content{
+    margin: 0 10%;
+    padding: 10vh 0;
+    min-height: 80vh;
+    
+    // h1{
+    //     // color: $primary;
+    // }
+    
+    
+    p, ul{
+        color: $darker-primary;
+    }
+    
+    
+    #my-list{
+        opacity: 0;
+    }
+    
+    ul{
+        margin-top: 50px;
+        margin-bottom: 100px;
+        padding-left: 0;
+    }
+}
+
+.wrapper{
+    margin-top: 70px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+$icons:("1": "⚠", "2": "⚑", "3": "☑", "4": "✈", "5": "✎", "6": "✔");
+
+@each $n, $glyph in $icons{
+    
+    .onscreen li:nth-child(#{$n}){
+        &:before{
+            position: absolute;
+            left: 0;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            content: $glyph;
+        }
+    }
+}
+
+
+@for $i from 1 through 4 {
+    .box-#{$i}{
+        $size: 15vw;
+        width: $size;
+        height: $size;
+        background: adjust-hue($primary, $i * 10);
+    }
+    
+}
+
+.circle {
+    $size: 10vw;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+}
+
+$c: 1;
+
+@while $c <= 3 {
+    .circle-#{$c} {
+        @extend .circle;
+        background: $lighter-primary;
+        $c : $c + 1;
+    }
+}
+
+
+@while $c >= 4 and $c <= 6{
+    .circle-#{$c} {
+        @extend .circle;
+        background: $darker-primary;
+        $c : $c + 1;
+    }
+}
+
+@for $i from 2 through 8 {
+    .path#{$i} {
+        position: absolute;
+        top: 0px;
+    }
+}
+
+
+@for $i from 1 through 6 {
+    
+    // ANIMAÇÃO DA LISTA
+    
+    .onscreen{
+        opacity: 1 !important;
+    }
+    
+    .onscreen li:nth-child(#{$i}){
+        list-style: none;
+        font-weight: bold;
+        font-size: 23px;
+        padding-left: 35px;
+        animation: enter #{$i / 5}s;
+        will-change: opacity, transform;
+    }
+    
+    @keyframes enter{
+        from{opacity:0; transform: translateX(-500px)}
+        to{opacity:1; transform: translateX(0px)}
+    }
+}
+
+@for $i from 1 through 8 {
+    
+    // TRIANGULOS DO BANNER
+    
+    .path#{$i} {
+        @if $i > 1{
+            position: absolute;
+            top: 0px;
+        }
+
+        @if $i == 1{
+            clip-path: polygon(0 0, 50% 0, 50% 50%);
+        } @else if $i == 2{
+            clip-path: polygon(50% 0, 100% 0, 50% 50%);
+        }@else if $i == 3{
+            clip-path: polygon(100% 0, 100% 50%, 50% 50%);
+        }@else if $i == 4{
+            clip-path: polygon(100% 50%, 100% 100%, 50% 50%);
+        }@else if $i == 5{
+            clip-path: polygon(100% 100%, 50% 100%, 50% 50%);
+        }@else if $i == 6{
+            clip-path: polygon(0 100%, 50% 100%, 50% 50%);
+        }@else if $i == 7{
+            clip-path: polygon(0 100%, 0 50%, 50% 50%);
+        }@else {
+            clip-path: polygon(0 0, 0 50%, 50% 50%);
+        }
+        
+        opacity: 0.5;
+        height: 100vh;
+        width: 100vw;
+        background-image: url('../assets/bg-1.jpg');
+        background-position: center bottom;
+        background-attachment: fixed;
+        animation: enter#{$i} #{1 + $i / 10}s;
+        will-change: transform;
+    }
+    
+    // ANIMAÇÃO TRIÂNGULOS BANNER
+    
+    @keyframes enter#{$i}{
+        @if $i == 1 or $i == 2{
+            from{transform: translateY(-#{$i * 100}px) translateX(#{$i * 100}px) rotatex(#{(180 / $i - $i * 30) + 'deg'})  scale(2)};
+        } @else if $i == 3 or $i == 4{
+            from{transform: translateX(#{$i * 100}px) translateY(#{$i * 100}px) rotatex(#{(180 / $i - $i * 30) + 'deg'})  scale(2)};
+        }@else if $i == 5 or $i == 6{
+            from{transform: translateY(#{$i * 100}px) translatex(-#{$i * 100}px) rotatex(#{(180 / $i - $i * 30) + 'deg'})  scale(2)};
+        }@else{
+            from{transform: translateX(-#{$i * 100}px)  translatey(#{$i * 100}px) rotatex(#{(180 / $i - $i * 30) + 'deg'})  scale(2)};
+        }
+        
+    }
+}
+
+
+

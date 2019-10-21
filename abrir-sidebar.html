@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="descondeription" lang="en" content="">
+    <title>Sidebar</title>
+    
+    <style>
+        
+        body, html, #tab{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin: 0;
+            height: 100%;
+            overflow-x: hidden;
+            
+        }
+        
+        .bg{
+            text-align: center;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            color: seagreen;
+            background:white; 
+        }
+        
+        
+        .bg div{
+            width: 100%;
+            
+        }
+        
+        #tab #menu{
+            background: rgb(111, 119, 219);
+            width: 300px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            padding: 50px;  
+        }
+        
+        #tab #menu a{
+            color:white;
+            width: 100%; 
+        }
+        
+        #tab .mostrar-btn{
+            color: seagreen;
+            border-color: seagreen;
+            border: 1px solid;
+            border-radius: 100px;
+            padding: 5px 20px;
+            cursor: pointer;
+            position: absolute;
+            left: calc(50% - (107.66px/2));
+            z-index: 2;
+            margin-top: 50px;
+        }
+        .initial{
+            opacity: 0;
+
+            /* transform: translatex(100vw); */
+        }
+        
+        .esconde{
+            transition: 0.3s;
+            opacity: 0;
+
+            /* animation: toright 0.5s; */
+            /* transform: translatex(100vw); */
+        }
+
+        
+        
+        .mostra{
+            transition: 0.5s;
+            opacity: 1;
+
+            /* animation: toleft 0.5s; */
+            /* transform: translatex(0); */
+        }
+        
+        
+        
+        
+        @keyframes toright{
+            from{
+                transform: translatex(0);
+            }
+            to{
+                transform: translatex(100vw);
+            }
+        }
+        @keyframes toleft{
+            from{
+                transform: translatex(100vw);
+            }
+            to{
+                transform: translatex(0);
+            }
+        }
+        
+        
+    </style>
+    
+</head>
+<body>
+    
+    <div id="tab" >
+        
+        <a onclick="changeClass('menu','mostra','esconde');" class="mostrar-btn">mostra</a>
+        
+        <div class="bg">
+            <div>
+                <h1>
+                    TEXTO INICIAL
+                </h1>
+            </div>
+        </div>
+        <div id="menu" class="initial">
+            <a href="">link 1</a> <br>
+            <a href="">link 2</a> <br>
+            <a href="">link 3</a> <br>
+        </div>
+        
+    </div>
+    
+    <script>
+        function changeClass(myID, className1, className2) {
+            document.getElementById(myID).className = (document.getElementById(myID).className == className1)?className2:className1;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="description" lang="en" content="">
+    <title>Class</title>
+    
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+        
+        
+        form{
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.418);
+            margin: 10% 20%;
+            padding: 20px;
+            text-align: center;
+            background:white;
+        }
+        
+        
+        .nome p, .sobrenome p{
+            color: rgb(180, 180, 180);
+        }
+        
+
+        h2, button, input{
+            color: #0e0e86;
+        }
+        
+        
+        input{
+            
+            -webkit-appearance: none;
+            border-style: solid;
+            border-width: 1px;
+            border-color: gainsboro;
+        }
+        
+        
+        button{
+            border: 1px solid #0e0e86;
+            padding: 5px 10px;
+            -webkit-appearance: initial;
+            background-color: white;
+        }
+        
+        
+        
+        /* TRANSITION */
+        
+        input, button:not(:active), body, .nome p, .sobrenome p{
+            transition: all 0.8s;
+        }
+        
+        
+
+        
+        /* HOVER */
+        
+        button:hover{
+            background-color: #0e0e86;
+            color: white;
+        }
+        
+        
+        
+        /* FOCUS*/
+        
+        input:focus{
+            outline: none;
+            background: lightcyan;
+            border-color: #0e0e86;
+        }
+        
+        
+        
+        /* FOCUS-WITHIN*/
+        
+        .nome:focus-within p, .sobrenome:focus-within p{
+            color: #0e0e86;
+        }
+   
+        
+       body:focus-within{
+            background: lightcyan;
+        }
+        
+        
+        
+        
+        /* ACTIVE */
+        
+        button:active{
+            background-color:#3d85c8;
+        }
+        
+        
+        
+    </style>
+    
+</head>
+<body>
+
+    <form action="obrigado.html">
+          
+        <h2>Preencha o formulário</h2>
+        
+        <div class="nome">
+            <p>NOME</p>
+            <input type="text" name="nome" required>
+        </div>
+        
+        <div class="sobrenome">
+            <p>SOBRENOME</p>
+            <input type="text" name="sobrenome" required>
+        </div>
+        
+        <br>
+        
+        <button type="submit">ENVIAR</button>
+        
+    </form>
+</body>
+</html>

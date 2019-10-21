@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="description" lang="en" content="">
+    <title>Slide Down</title>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+        body{
+            font-family: sans-serif;
+            margin: 0;
+        }
+        h4{
+
+            font-weight: 100;
+        }
+        
+        #first{
+            background: linear-gradient(0deg, #122d44d2,  #10b390d7), url(https://placeimg.com/1000/350/tech);
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+            justify-content: center;
+            text-align: center;
+        }
+        .last{
+            background: linear-gradient(0deg, #0a4272,  #108594);
+            height: 200px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center
+        }
+        
+        .wrap{
+            display: flex;
+            height: 100vh;
+            align-items: center;
+        }
+        
+        .text{
+            padding: 10%;
+        }
+        
+        a{
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    
+    
+    <div class="wrap" id="first">
+        <h1>
+            SCROLL DOWN TO SEE THE MAGIC
+            <br>
+            <a href="#init">&downarrow;</a>
+            
+        </h1>
+    </div>
+    <div class="wrap" id="init">
+        <div data-aos="zoom-in">
+            <img src="https://placeimg.com/640/650/tech" alt="">
+        </div>
+        
+        <div class="text">
+            <h1>In enim veniam Lorem est aliquip deserunt commodo.</h1>
+            <p>Eu eiusmod laboris labore consectetur laboris aute velit incididunt reprehenderit nostrud. Veniam commodo minim ut veniam nulla Lorem ea magna dolore nostrud. Elit do ipsum reprehenderit anim qui incididunt occaecat voluptate aliqua commodo aliquip.</p>
+            
+        </div>
+    </div>
+    <div class="wrap">
+        <div class="text">
+            <h1>In enim veniam Lorem est aliquip deserunt commodo.</h1>
+            <p>Eu eiusmod laboris labore consectetur laboris aute velit incididunt reprehenderit nostrud. Veniam commodo minim ut veniam nulla Lorem ea magna dolore nostrud. Elit do ipsum reprehenderit anim qui incididunt occaecat voluptate aliqua commodo aliquip.</p>
+            
+        </div>
+        <div data-aos="fade-down">
+            <img src="https://placeimg.com/850/480/tech" alt="">
+        </div>
+    </div>
+    
+    <div class="wrap">
+        <div data-aos="flip-right">
+            <img src="https://placeimg.com/350/480/tech" alt="">
+        </div>
+        
+        <div class="text">
+            <h1>In enim veniam Lorem est aliquip deserunt commodo.</h1>
+            <p>Eu eiusmod laboris labore consectetur laboris aute velit incididunt reprehenderit nostrud. Veniam commodo minim ut veniam nulla Lorem ea magna dolore nostrud. Elit do ipsum reprehenderit anim qui incididunt occaecat voluptate aliqua commodo aliquip.</p>
+            
+        </div>
+    </div>
+    
+    <div class="last">
+        <div>
+            <a href="#first">&uparrow; <br> <small>voltar ao início</small></a> 
+            <br>
+            <br>
+            <h4>
+                BIBLIOTECA AOS
+                <br>
+                <br>
+                <small>
+                    <a href="https://michalsnik.github.io/aos/">https://michalsnik.github.io/aos/</a>
+                </small>
+            </h4>
+        </div>
+    </h1>
+</div>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+</body>
+</html>

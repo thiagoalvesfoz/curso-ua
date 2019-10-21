@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="description" lang="en" content="">
+    <title>Class</title>
+    
+    <style>
+        body{
+            margin: 0;
+        }
+        .class1{
+            color:rgb(255, 255, 255); 
+            background:rgb(133, 9, 9)
+        }
+        .class2{
+            color:blue;
+            background:rgb(255, 255, 255)
+        }
+        .class3{
+            color:blue;
+            background:rgb(255, 255, 255)
+        }
+      
+    
+</style>
+
+</head>
+<body>
+
+    <!-- TRIGGERING BY HTML EVENT -->
+    
+    <button onclick="changeClasses()">CLICK ME</button>
+    
+    
+    <!-- TRIGGERING BY EVENT LISTENER -->
+    
+    <!-- <button id="btn">CLICK ME</button> -->
+    
+    
+    <div id="tab" class="class1">TROCAR CLASSE</div>
+    
+    
+    
+    <script>
+        
+        
+        // TRIGGERING BY HTML EVENT
+        
+        function changeClasses() {
+            document.getElementById('tab').className = (document.getElementById('tab').className == 'class1') ? 'class2' : 'class1';
+        }
+        
+        
+        // TRIGGERING BY EVENT LISTENER
+        
+        // document.getElementById("btn").addEventListener("click", changeClasses);
+        
+    </script>
+    
+    
+    
+</body>
+</html>

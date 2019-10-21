@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="description" lang="en" content="">
+    <title>Tabs</title>
+    
+    <style>
+        
+        body, html, #tab{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin: 0;
+            height: 100%;
+            overflow-x: hidden;
+            
+        }
+        
+        #corpo{
+            text-align: left;
+            height: 100%;
+            width: 300vw;
+            color: white;
+            display: flex;
+        }
+        
+        #corpo > div{
+            padding: 100px 10vw;
+            width: 80vw;
+        }
+        
+        #tab .menu{
+            position: absolute;
+            padding: 0 10%;
+            z-index: 2;
+            margin-top: 50px;
+        }
+        
+        #tab .menu a{
+            border: 1px solid;
+            border-radius: 100px;
+            padding: 5px 10px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .class1{
+            background:rgb(99, 200, 129); 
+            transition: 2s;
+        }
+        
+        .class1 #corpo{
+            animation: left1 1s;
+        }
+
+        .class2{
+            background: rgb(67, 106, 195);
+            transition: 2s;
+        }
+        
+        .class2 #corpo{
+            animation: left2 1s;
+            transform: translatex(-100vw);
+        }
+
+        .class3{
+            background:rgb(93, 38, 148); 
+            transition: 2s;
+        }
+        
+        .class3 #corpo{
+            animation: left3 1s;
+            transform: translatex(-200vw);
+        }
+
+        @keyframes left1{
+            from{
+                transform: translatex(100vw);
+            }
+            to{
+                transform: translatex(0);
+            }
+        }
+        @keyframes left2{
+            from{
+                transform: translatex(0);
+            }
+            to{
+                transform: translatex(-100vw);
+            }
+        }
+        @keyframes left3{
+            from{
+                transform: translatex(-100vw);
+            }
+            to{
+                transform: translatex(-200vw);
+            }
+        }
+   
+        
+    </style>
+    
+</head>
+<body>
+    
+    <div id="tab" class="class1">
+        
+        <div class="menu">
+            <a onclick="changeClass('class1')">1</a>
+            <a onclick="changeClass('class2')">2</a>
+            <a onclick="changeClass('class3')">3</a>
+        </div>
+            
+        <div id="corpo">
+            <div>
+                <h1>
+                    Página 1
+                </h1>
+
+                <p>Aliqua dolor reprehenderit nostrud consequat irure ut sunt deserunt incididunt est ipsum pariatur. Adipisicing adipisicing enim laboris quis dolore aliquip ipsum officia labore voluptate laboris tempor. Do sit pariatur nulla id exercitation id dolor ex deserunt. Exercitation culpa qui labore officia deserunt ad incididunt non. Esse incididunt magna voluptate elit voluptate laboris dolore laborum ut. Minim adipisicing cupidatat nostrud culpa tempor eu nostrud anim consequat cupidatat magna ad eiusmod qui.</p>
+            </div>
+            <div>
+                <h1>
+                    Página 2
+                </h1>
+
+                <p> Do sit pariatur nulla id exercitation id dolor ex deserunt. Exercitation culpa qui labore officia deserunt ad incididunt non. Esse incididunt magna voluptate elit voluptate laboris dolore laborum ut. Minim adipisicing cupidatat nostrud culpa tempor eu nostrud anim consequat cupidatat magna ad eiusmod qui.</p>
+            </div>
+            <div>
+                <h1>
+                    Página 3
+                </h1>
+
+                <p>Esse incididunt magna voluptate elit voluptate laboris dolore laborum ut. Minim adipisicing cupidatat nostrud culpa tempor eu nostrud anim consequat cupidatat magna ad eiusmod quiAliqua dolor reprehenderit nostrud consequat irure ut sunt deserunt incididunt est ipsum pariatur. Adipisicing adipisicing enim laboris quis dolore aliquip ipsum officia labore voluptate laboris tempor. Do sit pariatur nulla id exercitation id dolor ex deserunt. Exercitation culpa qui labore officia deserunt ad incididunt non. .</p>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+
+
+        function changeClass(classe) {
+           document.getElementById('tab').className = classe;
+        }
+    </script>
+</body>
+</html>

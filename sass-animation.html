@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="description" lang="en" content="">
+    <title>Class</title>
+    <link rel="stylesheet" href="css/sass-animation.css">
+</head>
+    
+<body>
+    <div class="banner-text">
+        <div class="bg">
+            <img src="assets/logo.svg">
+        </div>
+    </div>
+
+    
+    <div class="darker-primary">
+        <div class="path1"></div>
+        <div class="path2"></div>
+        <div class="path3"></div>
+        <div class="path4"></div>
+        <div class="path5"></div>
+        <div class="path6"></div>
+        <div class="path7"></div>
+        <div class="path8"></div>
+    </div>
+    
+    <div class="content">
+        <h1 class="titulo">Titulo 1</h1>
+        <p>Eiusmod aliquip cillum commodo nisi dolor non esse aliqua do. Commodo consequat nisi minim consectetur anim officia in veniam nulla nisi non Lorem adipisicing voluptate. Reprehenderit eiusmod laboris ea id amet duis anim cupidatat esse. Laboris cillum deserunt culpa reprehenderit commodo dolor officia proident consectetur irure.</p>
+        <p>Eiusmod aliquip cillum commodo nisi dolor non esse aliqua do. Commodo consequat nisi minim consectetur anim officia in veniam nulla nisi non Lorem adipisicing voluptate. Reprehenderit eiusmod laboris ea id amet duis anim cupidatat esse. Laboris cillum deserunt culpa reprehenderit commodo dolor officia proident consectetur irure.</p>
+        <br>  
+        <div id="my-list">
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+                <li>Item 5</li>
+                <li>Item 6</li>
+            </ul>
+        </div>
+        
+        <h1 class="titulo-2">Titulo 2</h1>
+        <p>Eiusmod aliquip cillum commodo nisi dolor non esse aliqua do. Commodo consequat nisi minim consectetur anim officia in veniam nulla nisi non Lorem adipisicing voluptate. Reprehenderit eiusmod laboris ea id amet duis anim cupidatat esse. Laboris cillum deserunt culpa reprehenderit commodo dolor officia proident consectetur irure.</p>
+        <p>Eiusmod aliquip cillum commodo nisi dolor non esse aliqua do. Commodo consequat nisi minim consectetur anim officia in veniam nulla nisi non Lorem adipisicing voluptate. Reprehenderit eiusmod laboris ea id amet duis anim cupidatat esse. Laboris cillum deserunt culpa reprehenderit commodo dolor officia proident consectetur irure.</p>
+        
+        <div class="wrapper">
+            <div class="box-1"></div>
+            <div class="box-2"></div>
+            <div class="box-3"></div>
+            <div class="box-4"></div>
+        </div>
+       
+        <h1 class="titulo-3">Titulo 3</h1>
+        <p>Eiusmod aliquip cillum commodo nisi dolor non esse aliqua do. Commodo consequat nisi minim consectetur anim officia in veniam nulla nisi non Lorem adipisicing voluptate. Reprehenderit eiusmod laboris ea id amet duis anim cupidatat esse. Laboris cillum deserunt culpa reprehenderit commodo dolor officia proident consectetur irure.</p>
+        <p>Eiusmod aliquip cillum commodo nisi dolor non esse aliqua do. Commodo consequat nisi minim consectetur anim officia in veniam nulla nisi non Lorem adipisicing voluptate. Reprehenderit eiusmod laboris ea id amet duis anim cupidatat esse. Laboris cillum deserunt culpa reprehenderit commodo dolor officia proident consectetur irure.</p>
+        
+        <div class="wrapper">
+            <div class="circle-1"></div>
+            <div class="circle-2"></div>
+            <div class="circle-3"></div>
+            <div class="circle-4"></div>
+            <div class="circle-5"></div>
+            <div class="circle-6"></div>
+        </div>
+        
+    </div>
+    
+    <script>
+        document.addEventListener("scroll", (a) =>{
+            
+            var mydiv = document.getElementById('my-list');
+            var scrolled = document.scrollingElement.scrollTop;
+            var position = mydiv.offsetTop;
+            var screen = window.innerHeight;
+            
+            if(position - screen < scrolled - 100){
+                mydiv.className = 'onscreen';
+            } 
+        });
+        
+        
+    </script>
+</body>
+</html>

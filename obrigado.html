@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="description" lang="en" content="">
+    <title>Class</title>
+    
+    <style>
+       body{
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.418);
+        margin: 20%;
+        padding: 20px;
+        text-align: center;
+       }
+
+       h2, a{
+            color: #0e0e86;
+        }
+        
+        a{
+            text-decoration: none;
+            border: 1px solid #0e0e86;
+            padding: 5px 10px;
+        }
+    </style>
+    
+</head>
+<body>
+        
+        <h2>Obrigado <span id="nome"></span> <span id="sobrenome">    </span>!</h2>
+
+        <a href="transition-focus-within.html">voltar</a>
+
+        <script>
+                
+            var nome = new URL(location.href).searchParams.get('nome');
+            var sobrenome = new URL(location.href).searchParams.get('sobrenome');
+
+            document.getElementById("nome").textContent = nome;
+            document.getElementById("sobrenome").textContent = sobrenome;
+
+        </script>
+        
+</body>
+</html>
