@@ -255,9 +255,7 @@
 					</ul>
 				</nav>
 			</section>
-			<div class="break">
-				<h2 class="break__title">Contributions</h2>
-			</div>
+			
 			<section class="section section--menu" id="Puck">
 				<h2 class="section__title">Puck</h2>
 				<span class="link-copy"></span>
@@ -404,32 +402,6 @@
 		</div>
 		<script src="js/classie.js"></script>
 
-		<script>
-		(function() {
-			[].slice.call(document.querySelectorAll('.menu')).forEach(function(menu) {
-				var menuItems = menu.querySelectorAll('.menu__link'),
-					setCurrent = function(ev) {
-						ev.preventDefault();
-
-						var item = ev.target.parentNode; // li
-
-						// return if already current
-						if (classie.has(item, 'menu__item--current')) {
-							return false;
-						}
-						// remove current
-						classie.remove(menu.querySelector('.menu__item--current'), 'menu__item--current');
-						// set current
-						classie.add(item, 'menu__item--current');
-					};
-
-				[].slice.call(menuItems).forEach(function(el) {
-					el.addEventListener('click', setCurrent);
-				});
-			});
-
-			
-		})(window);
-		</script>
+	
 	</body>
 </html>
